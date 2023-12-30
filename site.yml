@@ -6,10 +6,14 @@
 
   tasks:
 
-    # - name: Bootstrap
-      # ansible.builtin.include_role:
-        # name: zilux.tools.bootstrap
+  - name: Bootstrap
+    ansible.builtin.include_role:
+      name: zilux.tools.bootstrap
 
-    - name: Adjust virtual host
-      ansible.builtin.include_role:
-        name: zilux.tools.install_virthost
+  - name: Adjust stuff for hypervisor
+    ansible.builtin.include_role:
+      name: zilux.tools.install_virthost
+
+  - name: Install snap/epel
+    ansible.builtin.include_role:
+      name: zilux.tools.snap
