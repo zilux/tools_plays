@@ -2,7 +2,7 @@
 - name: Bootstrap a system
   hosts: all
   become: true
-  gather_facts: false
+  gather_facts: true
 
   tasks:
 
@@ -17,4 +17,4 @@
     - name: Install snap/epel
       ansible.builtin.include_role:
         name: zilux.tools.snap
-        
+
